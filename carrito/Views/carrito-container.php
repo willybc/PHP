@@ -1,7 +1,3 @@
-<?php
-$carrito = new CarritoController();
-?>
-
 <div id="cartSidebar" class="cart-sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
     <div class="cart-sidebar-content">

@@ -18,6 +18,8 @@
 <?php
 require_once 'Controllers/ProductoController.php';
 require_once 'Controllers/CarritoController.php';
+
+$carrito = new CarritoController();
 ?>
 
 <nav class="navbar navbar-dark bg-dark">
