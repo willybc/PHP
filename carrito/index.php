@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,7 +14,7 @@
     <!--<link rel="stylesheet" href="css/index.css">-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body style="height: 100%">
 <?php
 require_once 'Controllers/ProductoController.php';
 require_once 'Controllers/CarritoController.php';
@@ -22,7 +22,7 @@ require_once 'Controllers/CarritoController.php';
 $carrito = new CarritoController();
 ?>
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark" style="height: 6vh;">
     <div class="container">
         <a class="navbar-brand">Carrito</a>
         <button class="btn btn-secondary" id="cartButton">
@@ -31,8 +31,8 @@ $carrito = new CarritoController();
     </div>
 </nav>
 
-<div class="container container-paginacion">
-
+<div class="container container-paginacion"
+     style="height: 94vh; display: flex; flex-direction: column; justify-content: center;">
 	<?php include("./Views/productos-container.php"); ?>
 
 	<?php include("./Views/carrito-container.php"); ?>
@@ -42,6 +42,5 @@ $carrito = new CarritoController();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
 </body>
 </html>

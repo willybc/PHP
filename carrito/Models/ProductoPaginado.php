@@ -16,7 +16,7 @@ class ProductoPaginado
 		$this->paginaActual = 1;
 
 		$productoController = new ProductoController();
-		$categorias = ['laptops', 'tablets'];
+		$categorias = ['laptops', 'tablets', 'motorcycle'];
 		$this->productos = $productoController->obtenerProductosPorCategorias($categorias);
 
 		$this->nResultados = count($this->productos);

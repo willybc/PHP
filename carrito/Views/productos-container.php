@@ -2,22 +2,22 @@
 // Paginado
 require_once 'Models/ProductoPaginado.php';
 
-$nroPorPagina = 6;
+$nroPorPagina = 8;
 $productoPaginado = new ProductoPaginado($nroPorPagina);
-$listaProductos = $productoPaginado-> obtenerProductos();
+$listaProductos = $productoPaginado->obtenerProductos();
 ?>
 
-<h1>Productos Disponibles</h1>
-
 <div class="row">
-	<?php foreach ($listaProductos as $producto) { ?>
-        <div class="col-md-4">
+	<?php foreach($listaProductos as $producto) { ?>
+        <div class="col-lg-3 col-md-4 col-sm-6" style="margin-bottom: 1.5rem">
             <div class="card d-flex align-items-center">
-                <img src="<?php echo $producto->image; ?>" style="width: 300px; height: 300px;">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $producto->title; ?></h5>
-                    <p class="card-text"><?php echo $producto->price; ?></p>
-                    <button onclick="agregarAlCarrito(<?php echo $producto->id; ?>)" class="btn btn-primary">Agregar al Carrito</button>
+                <img src="<?php echo $producto->image; ?>" style="height: 200px;">
+                <div class="card-body d-flex" style="flex-direction: column">
+                    <h5 class="card-title fixed-height text-center"><?php echo $producto->title; ?></h5>
+                    <p class="card-text text-center"><?php echo $producto->price; ?></p>
+                    <button onclick="agregarAlCarrito(<?php echo $producto->id; ?>)" class="btn"
+                            style="background-color: rgb(20, 69, 124); color: white;">Agregar al Carrito
+                    </button>
                 </div>
             </div>
         </div>
@@ -43,17 +43,18 @@ $listaProductos = $productoPaginado-> obtenerProductos();
 </script>
 
 <style>
-    .paginas ul{
+    .paginas ul {
         margin: 10px 0;
         padding: 0;
     }
-    .paginas li{
+
+    .paginas li {
         display: inline-block;
         margin: 0;
         padding: 10px;
     }
 
-    .paginas li a{
+    .paginas li a {
         background: rgb(228, 228, 228);
         border-radius: 3px;
         color: rgb(50, 50, 50);
@@ -61,8 +62,17 @@ $listaProductos = $productoPaginado-> obtenerProductos();
         text-decoration: none;
     }
 
-    .actual{
+    .actual {
         background: rgb(20, 69, 124) !important;
         color: rgb(255, 255, 255) !important;
+    }
+
+    .fixed-height {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 2.4em;
     }
 </style>
