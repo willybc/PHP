@@ -16,7 +16,7 @@ $listaProductos = $productoPaginado->obtenerProductos();
                     <h5 class="card-title fixed-height text-center"><?php echo $producto->title; ?></h5>
                     <p class="card-text text-center"><?php echo $producto->price; ?></p>
                     <button onclick="agregarAlCarrito(<?php echo $producto->id; ?>)" class="btn"
-                            style="background-color: rgb(20, 69, 124); color: white;">Agregar al Carrito
+                            style="background-color: #7ABA78; color: white;">Agregar al Carrito
                     </button>
                 </div>
             </div>
@@ -63,7 +63,7 @@ $listaProductos = $productoPaginado->obtenerProductos();
     }
 
     .actual {
-        background: rgb(20, 69, 124) !important;
+        background: #7ABA78 !important;
         color: rgb(255, 255, 255) !important;
     }
 

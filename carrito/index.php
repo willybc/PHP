@@ -22,17 +22,17 @@ require_once 'Controllers/CarritoController.php';
 $carrito = new CarritoController();
 ?>
 
-<nav class="navbar navbar-dark bg-dark" style="height: 6vh;">
+<nav class="navbar navbar-dark" style="height: 6vh; background-color: #7ABA78;">
     <div class="container">
-        <a class="navbar-brand">Carrito</a>
-        <button class="btn btn-secondary" id="cartButton">
+        <a class="navbar-brand" style="color: white;">Carrito</a>
+        <button class="btn" id="cartButton" style="background-color: #7ABA78; border-color: #7ABA78; color: white;">
             <i class="fa-solid fa-cart-shopping"></i>
         </button>
     </div>
 </nav>
 
 <div class="container container-paginacion"
-     style="height: 94vh; display: flex; flex-direction: column; justify-content: center;">
+     style="min-height: 94vh; display: flex; flex-direction: column; justify-content: center;">
 	<?php include("./Views/productos-container.php"); ?>
 
 	<?php include("./Views/carrito-container.php"); ?>

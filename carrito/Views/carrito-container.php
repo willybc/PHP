@@ -71,7 +71,7 @@
     });
 
     function openCart() {
-        document.getElementById("cartSidebar").style.width = "400px";
+        document.getElementById("cartSidebar").style.width = "600px";
     }
 
     function closeCart() {

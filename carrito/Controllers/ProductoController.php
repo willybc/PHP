@@ -53,7 +53,7 @@ class ProductoController {
 			$producto->id,
 			$producto->title,
 			$producto->price,
-			$producto->image
+			$producto->thumbnail
 		);
 	}
 }
