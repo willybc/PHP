@@ -1,7 +1,4 @@
 <?php
-$productoController = new ProductoController();
-$listaProductos = $productoController->obtenerProductos();
-
 // Paginado
 require_once 'Models/ProductoPaginado.php';
 

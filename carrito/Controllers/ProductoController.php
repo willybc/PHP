@@ -2,11 +2,13 @@
 require_once 'Models/Producto.php';
 
 class ProductoController {
-	private $apiUrl = "https://fakestoreapi.com/products";
+	private $apiUrl = "https://dummyjson.com/products";
+	private $apiUrlBase = "https://dummyjson.com/products/category/";
 
 	public function obtenerProductos(): array
 	{
-		$productos = json_decode(file_get_contents($this->apiUrl));
+		$response = json_decode(file_get_contents($this->apiUrl));
+		$productos = $response->products;
 
 		$productosConvertidos = [];
 		foreach ($productos as $producto) {
@@ -14,9 +16,31 @@ class ProductoController {
 				$producto->id,
 				$producto->title,
 				$producto->price,
-				$producto->image
+				$producto->thumbnail
 			);
 			$productosConvertidos[] = $productoConvertido;
+		}
+
+		return $productosConvertidos;
+	}
+
+	public function obtenerProductosPorCategorias(array $categorias): array
+	{
+		$productosConvertidos = [];
+
+		foreach ($categorias as $categoria) {
+			$response = json_decode(file_get_contents($this->apiUrlBase . $categoria));
+			$productos = $response->products;
+
+			foreach ($productos as $producto) {
+				$productoConvertido = new Producto(
+					$producto->id,
+					$producto->title,
+					$producto->price,
+					$producto->thumbnail
+				);
+				$productosConvertidos[] = $productoConvertido;
+			}
 		}
 
 		return $productosConvertidos;
