@@ -1,3 +1,7 @@
 .idea
 .dist
 MVC/
+
+gmail_message_viewer/vendor/
+gmail_message_viewer/composer.lock
+gmail_message_viewer/credentials.json
