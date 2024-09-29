@@ -5,3 +5,5 @@ MVC/
 gmail_message_viewer/vendor/
 gmail_message_viewer/composer.lock
 gmail_message_viewer/config/credentials.json
+gmail_message_viewer/.vscode
+gmail_message_viewer/.dist
