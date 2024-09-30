@@ -23,4 +23,11 @@ class GmailModel {
         }
         return null;
     }
+
+    public function getProfile() {
+        if ($this-> service) {
+            return $this-> service -> users-> getProfile('me');
+        }
+        return null;
+    }
 }

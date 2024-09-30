@@ -12,7 +12,7 @@ class GmailController {
 
     public function index() {
         if ($this->serviceModel->isAuthenticated()) {
-            $this -> renderMessages();
+            $this -> renderMessagesIds();
         } else {
             $this -> redirectToAuth();
         }
@@ -30,8 +30,8 @@ class GmailController {
         }
     }
 
-    private function renderMessages() {
-        $emails = $this-> gmailModel->getMessages();
+    private function renderMessagesIds() {
+        //$results = $this-> gmailModel->getMessages();
         require $_SERVER["DOCUMENT_ROOT"] . '/Views/home.php';
     }
 
